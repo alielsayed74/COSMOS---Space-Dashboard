@@ -678,4 +678,23 @@ async function Launches(){
 }
 Launches()
 
+// sidebar toggle
+const side = document.getElementById('sidebar')
+const toggle = document.getElementById('sidebar-toggle')
+const header = document.getElementById('header')
+toggle.addEventListener('click', ()=>{
+  side.classList.remove('sidebar-mobile')
+  // document.getElementsByTagName('head')
+  // classList.remove('hidden')
+})
+document.addEventListener('click', (e) => {
+    if (side && !side.classList.contains('sidebar-mobile')) {
+        
+        if (!side.contains(e.target) && (!toggle || !toggle.contains(e.target))) {
+            side.classList.add('sidebar-mobile')         
+        }
+    }
+})
+
+
 
